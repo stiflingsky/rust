@@ -158,6 +158,8 @@ pub unsafe trait GlobalAlloc {
     ///
     /// The allocated block of memory may or may not be initialized.
     ///
+    /// The allocated block must satisfy `base + size <= usize::MAX`.
+    /// 
     /// # Errors
     ///
     /// Returning a null pointer indicates that either memory is exhausted
